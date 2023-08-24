@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image-shadow {
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            background-position: center;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .image-shadow::before {
+            content: " ";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(0deg,
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, 0));
+        }
+
+        body {
+            background-color: #002B33;
+        }
+
+        * {
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 100vw;
+            display: grid;
+            grid-template-areas:
+                "left right";
+        }
+
+        .image-shadow {
+            background-image: url("../realphot/1.jpg");
+            grid-area: right;
+            width: 50vw;
+            height: 70vh;
+        }
+
+        .left {
+            gap: 1em;
+            width: 50vw;
+            grid-area: left;
+            height: 50vh;
+        }
+
+        .wrapper {
+            padding: 1em;
+        }
+
+        .nav>.wrapper {
+            color: #79EBFF;
+            border-bottom: 3px solid #80ECFF;
+            height: 4vh;
+            align-items: center;
+            display: flex;
+            gap: 1em;
+        }
+
+        .herotitle-item>.wrrapper {
+            font-size: .1em;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .herotitle-item>.wrapper {
+            gap: 2em;
+            font-size: 0.9em;
+            display: grid;
+            justify-content: center;
+            color: #8FEEFF;
+        }
+
+        .herotitle-item>.wrapper>.p {
+            font-size: 1.1em;
+            line-height: 1.8em;
+            color: #8FEEFF;
+            width: 20vw;
+        }
+
+        .box>.wrapper {
+            width: 40vw;
+            display: grid;
+            gap: 1em;
+            grid-template-areas:
+                "a a"
+                "b c"
+                "d d";
+        }
+
+        .a {
+            grid-area: a;
+
+            height: 15vh;
+            background-color: #81ECFF;
+        }
+
+        .b {
+            grid-area: b;
+            height: 5vh;
+            background-color: #81ECFF;
+        }
+
+        .c {
+            grid-area: c;
+            background-color: #81ECFF;
+        }
+
+        .d {
+            background-color: #81ECFF;
+            grid-area: d;
+            height: 10vh;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .right>.wrapper {
+            display: grid;
+            color: blue;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lastbox {
+            width: 30vw;
+            height: 10vh;
+            background-color: #81ECFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="nav">
+                <div class="wrapper">
+                    <div>Home</div>
+                    <div>About</div>
+                    <div>Email</div>
+                    <div>Phone</div>
+                    <div>Location</div>
+                </div>
+
+            </div>
+            <div class="herotitle-item">
+                <div class="wrapper">
+                    <h1>Welcome To Our Community</h1>
+                    <div class="p">
+                        <p>Join our weekly anime discussion group where we dive into various anime topics. This week,
+                            we're focusing on Naruto. Participate in our anime discussion and get the opportunity to win
+                            exclusive prizes every month. The winners will be announced on our official Facebook page.
+                            Don't forget to follow us for more updates and information!</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="box">
+                <div class="wrapper">
+                    <div class="a"></div>
+                    <div class="b"></div>
+                    <div class="c"></div>
+                    <div class="d"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="right">
+            <div class="image-shadow"></div>
+            <div class="wrapper">
+                <div class="lastbox"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
