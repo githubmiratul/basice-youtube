@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         .image-shadow {
-
+            background-image: url("../realphot/1.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             position: relative;
@@ -31,167 +31,114 @@
         }
 
         * {
-            font-family: sans-serif;
             padding: 0;
             margin: 0;
+            box-sizing: border-box;
         }
 
         .container {
+            gap: 1em;
             width: 100vw;
             display: grid;
+            grid-template-columns: repeat(4, 1fr);
             grid-template-areas:
-                "left right";
+                "nav nav left left"
+                "hero hero left left"
+                "box1 box1 left left"
+                "box2 box3 left left"
+                "box4 box4 box5 box5";
         }
 
-        .image-shadow {
-            background-image: url("../realphot/1.jpg");
-            grid-area: right;
-            width: 50vw;
-            height: 70vh;
+        nav {
+            color: #79EBFF;
+            font-family: sans-serif;
+            padding: 1em;
+            display: flex;
+            gap: 1em;
+            align-items: center;
+            grid-area: nav;
+            height: 9vh;
+            border-bottom: 2px solid #80ECFF;
+        }
+
+        .hero {
+            display: grid;
+            gap: 2em;
+            font-size: .9em;
+            line-height: 1.9em;
+            font-family: sans-serif;
+            color: #8FEEFF;
+            padding: 1em;
+            grid-area: hero;
+            height: 30vh;
         }
 
         .left {
-            gap: 1em;
-            width: 50vw;
             grid-area: left;
-            height: 50vh;
-        }
-
-        .wrapper {
-            padding: 1em;
-        }
-
-        .nav>.wrapper {
-            color: #79EBFF;
-            border-bottom: 3px solid #80ECFF;
-            height: 4vh;
-            align-items: center;
-            display: flex;
-            gap: 1em;
-        }
-
-        .herotitle-item>.wrrapper {
-            font-size: .1em;
-            display: grid;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .herotitle-item>.wrapper {
-            gap: 2em;
-            font-size: 0.9em;
-            display: grid;
-            justify-content: center;
-            color: #8FEEFF;
-        }
-
-        .herotitle-item>.wrapper>.p {
-            font-size: 1.1em;
-            line-height: 1.8em;
-            color: #8FEEFF;
-            width: 20vw;
-        }
-
-        .box>.wrapper {
-            width: 40vw;
-            display: grid;
-            gap: 1em;
-            grid-template-areas:
-                "a a"
-                "b c"
-                "d d";
-        }
-
-        .a {
-            grid-area: a;
-
-            height: 15vh;
             background-color: #81ECFF;
         }
 
-        .b {
-            grid-area: b;
-            height: 5vh;
+        .box1 {
+            margin: 1em;
+            height: 20vh;
             background-color: #81ECFF;
+            grid-area: box1;
         }
 
-        .c {
-            grid-area: c;
+        .box2 {
+            margin: 1em;
+            height: 7vh;
             background-color: #81ECFF;
+            grid-area: box2;
         }
 
-        .d {
+        .box3 {
+            margin: 1em;
+            height: 7vh;
             background-color: #81ECFF;
-            grid-area: d;
-            height: 10vh;
+            grid-area: box3;
         }
 
-        .right {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-        }
-
-        .right>.wrapper {
-            display: grid;
-            color: blue;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lastbox {
-            width: 30vw;
-            height: 10vh;
+        .box4 {
+            margin: 1em;
+            height: 20vh;
             background-color: #81ECFF;
+            grid-area: box4;
+        }
+
+        .box5 {
+            margin: 1em;
+            height: 20vh;
+            background-color: #81ECFF;
+            grid-area: box5;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="left">
-            <div class="nav">
-                <div class="wrapper">
-                    <div>Home</div>
-                    <div>About</div>
-                    <div>Email</div>
-                    <div>Phone</div>
-                    <div>Location</div>
-                </div>
-
-            </div>
-            <div class="herotitle-item">
-                <div class="wrapper">
-                    <h1>Welcome To Our Community</h1>
-                    <div class="p">
-                        <p>Join our weekly anime discussion group where we dive into various anime topics. This week,
-                            we're focusing on Naruto. Participate in our anime discussion and get the opportunity to win
-                            exclusive prizes every month. The winners will be announced on our official Facebook page.
-                            Don't forget to follow us for more updates and information!</p>
-                    </div>
-
-                </div>
-            </div>
-            <div class="box">
-                <div class="wrapper">
-                    <div class="a"></div>
-                    <div class="b"></div>
-                    <div class="c"></div>
-                    <div class="d"></div>
-                </div>
-
-            </div>
+        <nav>
+            <div>Home</div>
+            <div>About</div>
+            <div>Contact</div>
+            <div>Email</div>
+            <div>Phone</div>
+        </nav>
+        <div class="left image-shadow"></div>
+        <div class="hero">
+            <h1>Welcome to our vibrant community !</h1>
+            <p>Join our weekly anime discussion group where we dive into various anime topics. This week, we're focusing
+                on Naruto. Participate in our anime discussion and get the opportunity to win exclusive prizes every
+                month. The winners will be announced on our official Facebook page. Don't forget to follow us for more
+                updates and information!</p>
         </div>
-        <div class="right">
-            <div class="image-shadow"></div>
-            <div class="wrapper">
-                <div class="lastbox"></div>
-            </div>
 
-
-        </div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
     </div>
-
 </body>
 
 </html>
